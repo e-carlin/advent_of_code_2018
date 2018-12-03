@@ -41,7 +41,7 @@ def solution_2():
     # https://en.wikipedia.org/wiki/Levenshtein_distance
     parsed_data = parse_input_data("input.txt")
     for index, line_1 in enumerate(parsed_data):
-        for line_2 in parsed_data[index:]: # TODO: Start from line_1 position +1 not the start of the list
+        for line_2 in parsed_data[index+1:]: 
             if distance(line_1, line_2) == 1:
                 index_of_differing_char = editops(line_1, line_2)[0][1]
                 print("Mathcing string = {}".format(line_1[:index_of_differing_char]+line_1[index_of_differing_char+1:]))
